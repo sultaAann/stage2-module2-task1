@@ -1,7 +1,6 @@
 package com.example.servlet;
 
 import com.example.User;
-import com.example.Warehouse;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,11 +12,6 @@ import java.io.IOException;
 
 @WebServlet("/add")
 public class AddUserServlet extends HttpServlet {
-    public static Warehouse wh;
-    @Override
-    public void init() throws ServletException {
-        wh = Warehouse.getInstance();
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
