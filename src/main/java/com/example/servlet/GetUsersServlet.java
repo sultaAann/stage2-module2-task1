@@ -1,6 +1,7 @@
 package com.example.servlet;
 
 import com.example.User;
+import com.example.Warehouse;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +17,7 @@ import java.util.Set;
 public class GetUsersServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Set<User> users = AddUserServlet.wh.getUsers();
+        Set<User> users = Warehouse.getInstance().getUsers();
 
         request.setAttribute("users", users);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/users");
